@@ -1,0 +1,18 @@
+# Copy to .github/workflows/rule-lint.yml in your repo.
+name: rule-lint
+on:
+  pull_request:
+    paths: ['CLAUDE.md', 'AGENTS.md', 'GEMINI.md', '.cursorrules', '.cursor/rules/**', '.github/copilot-instructions.md', 'package.json']
+  push:
+    branches: [main]
+jobs:
+  rule-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Until rule-lint is published to npm, run it from the repo:
+      # - run: npx --yes github:<you>/rule-lint
+      - run: npx --yes rule-lint

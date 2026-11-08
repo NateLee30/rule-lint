@@ -1,0 +1,37 @@
+{
+  "name": "rule-lint",
+  "version": "0.1.0",
+  "description": "Lint agent instruction files (CLAUDE.md, AGENTS.md, .cursorrules) so every rule declares how it is enforced.",
+  "type": "module",
+  "bin": {
+    "rule-lint": "bin/rule-lint.js"
+  },
+  "exports": "./src/index.js",
+  "files": [
+    "bin",
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "lint:rules": "node bin/rule-lint.js",
+    "guard": "scripts/oss-guard.sh",
+    "setup": "git config core.hooksPath .githooks"
+  },
+  "keywords": [
+    "claude",
+    "agents",
+    "cursor",
+    "lint",
+    "ai",
+    "instructions",
+    "CLAUDE.md",
+    "AGENTS.md"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^3.2.7"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+coverage/
+.DS_Store
+# Private files never belong in this repo
+denylist.txt
+EXTRACTION_POLICY.md
